@@ -12,6 +12,7 @@ short_description: I guess you might speak <Language>
 
 # Language Guesser based on Name
 
+![preview](.resources/preview.png)
 
 ## Data Source
 
@@ -31,6 +32,8 @@ The code is partially inspired by https://pytorch.org/tutorials/intermediate/cha
 
 ## Evaluation
 Although the code is mostly replicated. However, I changed the dataloader to use apply lowercase transformation to data, and it confused the model.
+
+> Notice that the *diagonal* brightness for the **without lowercase**, which can be said that the actual class being *arabic* (for example) is guess as *arabic*. This is not the case with **with lowercase**.
 
 - Confusion matrix with **with lowercase** transformation
     ![Click here to view the image](model/lowercase_evaluate.png)
