@@ -1,0 +1,16 @@
+{
+    "name": "NLP Pytorch", 
+
+    "image": "76e5e98ec29501e94739cafb6daa580774619fa92b6c4d71efade219a23b4b22"
+    ,
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-toolsai.jupyter",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.debugpy"
+            ]
+        }
+    }
+}

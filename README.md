@@ -10,7 +10,7 @@ pinned: false
 short_description: I guess you might speak <Language>
 ---
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+# Language Guesser based on Name
 
 
 ## Data Source
@@ -23,4 +23,19 @@ Last Accessed: 30th Dec 2024
 The code is partially inspired by https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html
 
 **Changes I Introduced**
-    - DataLoader is added 
+- NamesDataset is separated from transformation, useful for transformation during inference
+- target is made integer instead of one-hot encoding;
+- changed the loss from combination of LogSoftmax + NLLoss to CrossEntropy (EXACTLY THE SAME STUFF); which further required removing the softmax layer from the architecture.
+- DataLoader is added 
+- Input made batch first > Corresponding RNN is also made batch first.
+
+## Evaluation
+Although the code is mostly replicated. However, I changed the dataloader to use apply lowercase transformation to data, and it confused the model.
+
+- Confusion matrix with **with lowercase** transformation
+    ![Click here to view the image](model/lowercase_evaluate.png)
+    ![Click here to view the image](model/lowercase_loss.png)
+
+- Confusion matrix **without lowercase** transformation
+    ![Click here to view the image](model/evaluate.png)
+    ![Click here to view the image](model/loss.png)
